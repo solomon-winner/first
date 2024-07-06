@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   GlobalKey<FormState> _loginFormKey = GlobalKey();
+  String? UserName, Password;
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +62,11 @@ class _LoginState extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
+            onSaved: (value) {
+              setState(() {
+               UserName = value;              
+              });
+            },
             validator: (value) {
               if (value == null || value.isEmpty) {
                 return "Enter A User Name!";
@@ -71,6 +77,12 @@ class _LoginState extends State<Login> {
             ),
           ),
           TextFormField(
+            obscureText: true,
+            onSaved: (value) {
+              setState(() {
+              Password = value;              
+              });
+            },
             validator: (value) {
               if (value == null || value.length < 5) {
                 return "password must have atleast 5 digits!";
@@ -93,7 +105,10 @@ class _LoginState extends State<Login> {
       child: ElevatedButton(
         onPressed: () {
           if (_loginFormKey.currentState?.validate()?? false) 
-          {}
+          {
+            _loginFormKey.currentState?.save();
+            print("$UserName - $Password");
+          }
         },
         child: const Text(
          "Login",
