@@ -17,19 +17,22 @@ class _LoginState extends State<Login> {
         title: Text("Login",
         ),
       ),
-      body: _buildUI(),
+      body: SafeArea (child: _buildUI()),
     );
   }
   
   Widget _buildUI() {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        _title(),
-        _loginForm(),
-      ],
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width ,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _title(),
+          _loginForm(),
+        ],
+      ),
     );
   }
 
@@ -43,7 +46,7 @@ class _LoginState extends State<Login> {
     );
 
   }
-  
+
   Widget _loginForm() {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width * 0.90,
