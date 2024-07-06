@@ -53,18 +53,29 @@ class _LoginState extends State<Login> {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width * 0.90,
       height: MediaQuery.sizeOf(context).height * 0.30,
-      child: Form(child: Column(
-        key: _loginFormKey,
+      child: Form(
+        key: _loginFormKey,        
+        child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "Enter A User Name!";
+              }
+            },
             decoration: InputDecoration(
               hintText: "User Name",
             ),
           ),
           TextFormField(
+            validator: (value) {
+              if (value == null || value.length < 5) {
+                return "password must have atleast 5 digits!";
+              }
+            },
             decoration: InputDecoration(
               hintText: "PassWord",
             ),
