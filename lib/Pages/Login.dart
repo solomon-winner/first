@@ -9,6 +9,8 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  GlobalKey<FormState> _loginFormKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +54,7 @@ class _LoginState extends State<Login> {
       width: MediaQuery.sizeOf(context).width * 0.90,
       height: MediaQuery.sizeOf(context).height * 0.30,
       child: Form(child: Column(
+        key: _loginFormKey,
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +80,10 @@ class _LoginState extends State<Login> {
     return SizedBox(
       width: MediaQuery.sizeOf(context).width * 0.60,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          if (_loginFormKey.currentState?.validate()?? false) 
+          {}
+        },
         child: const Text(
          "Login",
          ),
