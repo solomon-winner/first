@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                 return "Enter A User Name!";
               }
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: "User Name",
             ),
           ),
@@ -88,7 +88,7 @@ class _LoginState extends State<Login> {
                 return "password must have atleast 5 digits!";
               }
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: "PassWord",
             ),
           ),
