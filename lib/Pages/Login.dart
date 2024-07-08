@@ -63,7 +63,7 @@ class _LoginState extends State<Login> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           TextFormField(
-            initialValue: "Solomon",
+            initialValue: 'emilys',
             onSaved: (value) {
               setState(() {
                UserName = value;              
@@ -79,7 +79,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           TextFormField(
-            initialValue: "123456",
+            initialValue: 'emilyspass',
             obscureText: true,
             onSaved: (value) {
               setState(() {
