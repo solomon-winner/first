@@ -16,7 +16,11 @@ class AuthService {
         "username": UserName,
         "password": PassWord,
       });
-      print(response?.statusCode);
+
+      if (response?.statusCode == 200 && response?.data !=null) {
+        print(response!.data);
+      }
+
     } catch (e) {
       print(e);
     }
