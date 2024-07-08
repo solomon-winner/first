@@ -13,5 +13,15 @@ class HttpService {
 setup(); 
   }
 
-  Future<void> setup({String? bearerToken}) async {}
+  Future<void> setup({String? bearerToken}) async {
+    final headers = {
+      "Content-Type": "application/json",
+    };
+
+    final options = BaseOptions(
+      // baseUrl: ,
+      headers: headers,
+    );
+    _dio.options = options;
+  }
 }
