@@ -1,10 +1,13 @@
 import 'package:first/Services/Http_Service.dart';
+import '../models/User.dart';
 
 class AuthService {
   static final AuthService _singleton =AuthService._internal();
   
   final _httpService = HttpService();
    
+   User? user;
+
   factory AuthService() {
     return _singleton;
   }
@@ -18,7 +21,7 @@ class AuthService {
       });
 
       if (response?.statusCode == 200 && response?.data !=null) {
-        print(response!.data);
+        user = User.fromJson(response!.data);
       }
 
     } catch (e) {

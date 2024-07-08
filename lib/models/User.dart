@@ -1,4 +1,4 @@
-class Welcome {
+class User {
     int id;
     String username;
     String email;
@@ -9,7 +9,7 @@ class Welcome {
     String token;
     String refreshToken;
 
-    Welcome({
+    User({
         required this.id,
         required this.username,
         required this.email,
@@ -21,7 +21,7 @@ class Welcome {
         required this.refreshToken,
     });
 
-    Welcome copyWith({
+    User copyWith({
         int? id,
         String? username,
         String? email,
@@ -32,7 +32,7 @@ class Welcome {
         String? token,
         String? refreshToken,
     }) => 
-        Welcome(
+        User(
             id: id ?? this.id,
             username: username ?? this.username,
             email: email ?? this.email,
@@ -44,7 +44,7 @@ class Welcome {
             refreshToken: refreshToken ?? this.refreshToken,
         );
 
-    factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
+    factory User.fromJson(Map<String, dynamic> json) => User(
         id: json["id"],
         username: json["username"],
         email: json["email"],
