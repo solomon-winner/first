@@ -112,7 +112,9 @@ class _LoginState extends State<Login> {
             _loginFormKey.currentState?.save();
             bool result = await AuthService().login(
               UserName!,
-               Password!,); 
+              Password!,
+              ); 
+              print(result);
           }
         },
         child: const Text(
