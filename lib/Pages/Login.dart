@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
               Password!,
               ); 
               if (result){
-
+                Navigator.pushReplacementNamed(context, "/home");
               } else {
                 StatusAlert.show(context,
                 duration: const Duration(seconds: 2),

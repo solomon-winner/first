@@ -1,3 +1,4 @@
+import 'package:first/Pages/Home.dart';
 import 'package:first/Pages/Login.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Login(),
+      initialRoute: "/login",
+      routes: {
+        "/login": (context) => Login(),
+        "/home" : (context) => Home(),
+      },
     );
   }
   
