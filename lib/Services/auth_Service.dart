@@ -11,6 +11,7 @@ class AuthService {
   factory AuthService() {
     return _singleton;
   }
+
   AuthService._internal();
 
   Future<bool> login(String UserName, String PassWord) async {
@@ -20,13 +21,14 @@ class AuthService {
         "password": PassWord,
       });
 
-      if (response?.statusCode == 200 && response?.data !=null) {
+      if (response?.statusCode == 200 && response?.data != null) {
         user = User.fromJson(response!.data);
       }
 
     } catch (e) {
       print(e);
     }
+    
     return false;
   }
 
