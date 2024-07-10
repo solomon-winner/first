@@ -2,7 +2,7 @@ import 'package:first/Services/Http_Service.dart';
 import '../models/User.dart';
 
 class AuthService {
-  static final AuthService _singleton =AuthService._internal();
+  static final AuthService _singleton = AuthService._internal();
   
   final _httpService = HttpService();
    
@@ -23,6 +23,8 @@ class AuthService {
 
       if (response?.statusCode == 200 && response?.data != null) {
         user = User.fromJson(response!.data);
+        HttpService().setup(bearerToken: user!.token);
+        return true;
       }
 
     } catch (e) {
