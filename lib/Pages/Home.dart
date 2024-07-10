@@ -1,3 +1,4 @@
+import 'package:first/Services/data_Service.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -24,6 +25,7 @@ class _HomeState extends State<Home> {
       child: Column(
         children: [
           _recipeTypeButtons(),
+          _RespesList(),
         ],
       ),
     );
@@ -78,5 +80,17 @@ class _HomeState extends State<Home> {
       ),
       
     );
+  }
+
+  Widget _RespesList() {
+  return Expanded(
+  child: FutureBuilder(
+    future: DataService().getRecipes(),
+     builder: (context, snapshot) {
+      return Container();
+     })
+
+  
+  );
   }
 }
