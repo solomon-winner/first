@@ -12,5 +12,10 @@ class DataService {
 
   Future<List<Recipe>?> getRecipes() async {
     String path = "recipes/";
+    var response = await _httpService.get(path);
+
+    if (response?.statusCode == 200 && response?.data != null) {
+      print(response!.data);
+    }
   }
 }
