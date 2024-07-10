@@ -44,4 +44,14 @@ setup();
       print(e);  
     }
   }
+
+  Future<Response?> get(String path) async {
+    try {
+      final response = await _dio.get(path);
+      return response;
+    } catch (e) {
+      print(e);
+    }
+    return null;
+  }
 }
