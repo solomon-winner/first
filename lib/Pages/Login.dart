@@ -1,5 +1,6 @@
 import 'package:first/Services/auth_Service.dart';
 import 'package:flutter/material.dart';
+import 'package:status_alert/status_alert.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -114,7 +115,19 @@ class _LoginState extends State<Login> {
               UserName!,
               Password!,
               ); 
-              print(result);
+              if (result){
+
+              } else {
+                StatusAlert.show(context,
+                duration: const Duration(seconds: 2),
+                title: 'Login Failed',
+                subtitle: 'Please try again',
+                configuration: const IconConfiguration(
+                  icon: Icons.error,
+                ),
+                maxWidth: 260,
+                );
+              }
           }
         },
         child: const Text(
