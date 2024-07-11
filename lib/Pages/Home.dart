@@ -92,6 +92,11 @@ class _HomeState extends State<Home> {
           child: CircularProgressIndicator(),
           );
       }
+      if (snapshot.hasError) {
+        return const Center(
+          child: Text("Unable to load data."),
+        );
+      }
       return Container();
      })
 
