@@ -26,15 +26,17 @@ class RecipePage extends StatelessWidget {
   }
 
 Widget _buildUI(BuildContext context) {
-        return Column(
-          children: [
-            _RecipeImage(
-              context,
-            ),
-            _RecipeDetails(context),
-            _RecipeIngredients(context),
-            _RecipeInstructions(context),
-          ],
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              _RecipeImage(
+                context,
+              ),
+              _RecipeDetails(context),
+              _RecipeIngredients(context),
+              _RecipeInstructions(context),
+            ],
+          ),
         );
       }
 
@@ -125,7 +127,27 @@ Widget _RecipeDetails (BuildContext context) {
 
   Widget _RecipeInstructions (BuildContext context) {
     return Container(
-      
+      color: Colors.white,
+      width: MediaQuery.sizeOf(context).width,
+      padding: const EdgeInsets.symmetric(
+        vertical: 15.0,
+        horizontal: 20.0,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: recipe.instructions.map((i) {
+          return Text(
+            i,
+            maxLines: 3,
+            textAlign: TextAlign.start,
+            style: const TextStyle(
+              fontSize: 15.0,
+            ),
+            );
+        },).toList(),
+        ),
     );
   }
 }
