@@ -1,5 +1,6 @@
 import 'package:first/models/Recipe.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class RecipePage extends StatelessWidget {
   
@@ -17,15 +18,33 @@ class RecipePage extends StatelessWidget {
           "RecipeBook",
         ),
       ),
-      body: _buildUI(),
+      body: _buildUI(context),
     );
       
   }
 
-Widget _buildUI() {
+Widget _buildUI(BuildContext context) {
         return Column(
-          children: [],
+          children: [
+            _RecipeImage(
+              context,
+            )
+          ],
         );
       }
+
+Widget _RecipeImage(BuildContext context,) {
+  return Container(
+    height: MediaQuery.sizeOf(context).height * 0.40,
+    width: MediaQuery.sizeOf(context).width,
+    decoration: BoxDecoration(
+      image:DecorationImage(
+       image: NetworkImage(
+        recipe.image),  
+      )
+     
+      ),
+  );
+}
     
 }
