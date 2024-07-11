@@ -124,7 +124,7 @@ String _mealTypeFilter = "";
                 context,
                  MaterialPageRoute(
                   builder: (context) {
-                    return RecipePage();
+                    return RecipePage(recipe: recipe,);
                   }
                   ),
                  )
