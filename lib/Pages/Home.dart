@@ -105,10 +105,15 @@ class _HomeState extends State<Home> {
           return ListTile(
             isThreeLine: true,
             subtitle: Text(
-              "${recipe.cuisine}\nDifficulty: ${recipe.difficulty}",),
+              "${recipe.cuisine}\nDifficulty: ${recipe.difficulty}",
+              ),
+              leading: Image.network(
+                recipe.image,
+              ),
             title: Text(
               recipe.name,
             ),
+            trailing: Text("${recipe.rating.toString()}"),
           );
         },
       );
