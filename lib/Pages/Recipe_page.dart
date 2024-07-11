@@ -139,7 +139,7 @@ Widget _RecipeDetails (BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: recipe.instructions.map((i) {
           return Text(
-            i,
+            "${recipe.instructions.indexOf(i)+1}. $i\n",
             maxLines: 3,
             textAlign: TextAlign.start,
             style: const TextStyle(
