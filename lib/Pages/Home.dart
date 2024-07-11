@@ -51,7 +51,7 @@ String _mealTypeFilter = "";
             child: FilledButton(
               onPressed: () {
             setState(() {
-              _mealTypeFilter = "";
+              _mealTypeFilter = "snack";
             });
             }, 
             child: const Text("Snack"),),
@@ -62,7 +62,9 @@ String _mealTypeFilter = "";
               horizontal: 5.0,
             ),
             child: FilledButton(onPressed: () {
-            
+             setState(() {
+              _mealTypeFilter = "breakfast";
+            });
             }, 
             child: const Text("BreackFast"),),
           ),
@@ -72,7 +74,9 @@ String _mealTypeFilter = "";
               horizontal: 5.0,
             ),
             child: FilledButton(onPressed: () {
-            
+             setState(() {
+              _mealTypeFilter = "lunch";
+            });           
             }, 
             child: const Text("Lunch"),),
           ),
@@ -82,7 +86,9 @@ String _mealTypeFilter = "";
               horizontal: 5.0,
             ),
             child: FilledButton(onPressed: () {
-            
+              setState(() {
+              _mealTypeFilter = "dinner";
+            });          
             }, 
             child: const Text("Dinner"),),
           ),
@@ -126,7 +132,7 @@ String _mealTypeFilter = "";
               recipe.name,
             ),
             trailing: Text("${recipe.rating.toString()}",
-            style: TextStyle(
+            style:const TextStyle(
               fontSize: 15,
             ),
             ),
