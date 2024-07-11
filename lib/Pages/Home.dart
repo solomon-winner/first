@@ -98,18 +98,17 @@ class _HomeState extends State<Home> {
           child: Text("Unable to load data."),
         );
       }
-      return Container();
-      // return ListView.builder(
-      //   itemCount: snapshot.data!.length,
-      //   itemBuilder: (context, index) {
-      //     Recipe recipe = snapshot.data![index];
-      //     return ListTile(
-      //       title: Text(
-      //        // recipe.name,
-      //       ),
-      //     );
-      //   },
-      // );
+      return ListView.builder(
+        itemCount: snapshot.data!.length,
+        itemBuilder: (context, index) {
+          Recipe recipe = snapshot.data![index];
+          return ListTile(
+            title: Text(
+              recipe.name,
+            ),
+          );
+        },
+      );
      })
 
   

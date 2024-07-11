@@ -20,7 +20,7 @@ class DataService {
         List data = response!.data["recipes"];
 
         List<Recipe> recipes = data.map((e) => Recipe.fromJson(e)).toList();
-        print(recipes);
+
         return recipes;
       
     } else {
