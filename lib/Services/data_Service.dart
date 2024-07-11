@@ -17,6 +17,7 @@ class DataService {
     if(filter.isNotEmpty) {
       path += "meal-type/$filter";
     }
+    
     var response = await _httpService.get(path);
 
     if (response?.statusCode == 200 && response?.data != null) {
