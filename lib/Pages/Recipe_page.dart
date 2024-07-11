@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,6 +16,7 @@ class RecipePage extends StatelessWidget {
     );
       
   }
+
 Widget _buildUI() {
         return Column(
           children: [],
