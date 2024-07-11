@@ -101,7 +101,7 @@ String _mealTypeFilter = "";
   Widget _RespesList() {
   return Expanded(
   child: FutureBuilder(
-    future: DataService().getRecipes(),
+    future: DataService().getRecipes(_mealTypeFilter),
      builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
         return const Center(
@@ -118,6 +118,7 @@ String _mealTypeFilter = "";
         itemBuilder: (context, index) {
           Recipe recipe = snapshot.data![index];
           return ListTile(
+            onTap: () => {},
             contentPadding: const EdgeInsets.only(
               top: 20.0,
             ),
