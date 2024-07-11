@@ -22,7 +22,7 @@ class DataService {
           print("Parsing recipe: $e");
           return Recipe.fromJson(e);
         }).toList();
-        print("Parsed recipes: $recipes");
+        print("Parsed recipes 2 : $recipes");
         return recipes;
       } catch (e) {
         print("Error parsing recipes: $e");

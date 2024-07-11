@@ -87,6 +87,11 @@ class _HomeState extends State<Home> {
   child: FutureBuilder(
     future: DataService().getRecipes(),
      builder: (context, snapshot) {
+      if (snapshot.connectionState == ConnectionState.waiting) {
+        return const Center(
+          child: CircularProgressIndicator(),
+          );
+      }
       return Container();
      })
 
