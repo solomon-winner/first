@@ -1,3 +1,4 @@
+import 'package:first/Pages/Recipe_page.dart';
 import 'package:first/Services/data_Service.dart';
 import 'package:first/models/Recipe.dart';
 import 'package:flutter/material.dart';
@@ -118,7 +119,16 @@ String _mealTypeFilter = "";
         itemBuilder: (context, index) {
           Recipe recipe = snapshot.data![index];
           return ListTile(
-            onTap: () => {},
+            onTap: () => {
+              Navigator.push(
+                context,
+                 MaterialPageRoute(
+                  builder: (context) {
+                    return RecipePage();
+                  }
+                  ),
+                 )
+            },
             contentPadding: const EdgeInsets.only(
               top: 20.0,
             ),

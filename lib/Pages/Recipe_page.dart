@@ -1,7 +1,12 @@
+import 'package:first/models/Recipe.dart';
 import 'package:flutter/material.dart';
 
 class RecipePage extends StatelessWidget {
   
+  final Recipe recipe;
+
+  RecipePage({required this.recipe});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
