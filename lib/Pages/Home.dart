@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-String mealTypeFilter = "";
+String _mealTypeFilter = "";
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +48,11 @@ String mealTypeFilter = "";
             padding: const EdgeInsets.symmetric(
               horizontal: 5.0,
             ),
-            child: FilledButton(onPressed: () {
-            
+            child: FilledButton(
+              onPressed: () {
+            setState(() {
+              _mealTypeFilter = "";
+            });
             }, 
             child: const Text("Snack"),),
           ),
