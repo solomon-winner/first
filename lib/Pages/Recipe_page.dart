@@ -31,6 +31,7 @@ Widget _buildUI(BuildContext context) {
               context,
             ),
             _RecipeDetails(context),
+            _RecipeIngredients(context),
           ],
         );
       }
@@ -97,5 +98,10 @@ Widget _RecipeDetails (BuildContext context) {
     )
   );
 }
-    
+
+  Widget _RecipeIngredients(BuildContext context) {
+    return Container(
+      child: Column(),
+    );
+  }  
 }
