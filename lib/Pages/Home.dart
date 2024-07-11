@@ -22,7 +22,10 @@ class _HomeState extends State<Home> {
   }
 
   Widget _buildUI() {
-    return Container(
+    return Padding(
+      padding: const EdgeInsets.all(
+        10.0,
+      ),
       child: Column(
         children: [
           _recipeTypeButtons(),
@@ -103,6 +106,9 @@ class _HomeState extends State<Home> {
         itemBuilder: (context, index) {
           Recipe recipe = snapshot.data![index];
           return ListTile(
+            contentPadding: const EdgeInsets.only(
+              top: 20.0,
+            ),
             isThreeLine: true,
             subtitle: Text(
               "${recipe.cuisine}\nDifficulty: ${recipe.difficulty}",
@@ -113,7 +119,11 @@ class _HomeState extends State<Home> {
             title: Text(
               recipe.name,
             ),
-            trailing: Text("${recipe.rating.toString()}"),
+            trailing: Text("${recipe.rating.toString()}",
+            style: TextStyle(
+              fontSize: 15,
+            ),
+            ),
           );
         },
       );
