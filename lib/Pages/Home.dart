@@ -103,6 +103,9 @@ class _HomeState extends State<Home> {
         itemBuilder: (context, index) {
           Recipe recipe = snapshot.data![index];
           return ListTile(
+            isThreeLine: true,
+            subtitle: Text(
+              "${recipe.cuisine}\nDifficulty: ${recipe.difficulty}",),
             title: Text(
               recipe.name,
             ),
