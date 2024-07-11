@@ -54,6 +54,10 @@ Widget _RecipeDetails (BuildContext context) {
   return Container(
     color: Colors.white,
     width: MediaQuery.sizeOf(context).width,
+    padding: const EdgeInsets.symmetric(
+      vertical: 15.0,
+      horizontal: 20.0,
+    ),
     child: Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,6 +67,30 @@ Widget _RecipeDetails (BuildContext context) {
         style: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w300,
+        ),
+        ),
+
+        Text(
+          recipe.name,
+          style: const TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        Text(
+          "Prep Time ${recipe.prepTimeMinutes} Minutes | Cook Time: ${recipe.cookTimeMinutes} Minutes",
+        style: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w300,
+        ),
+        ),
+
+        Text(
+          "${recipe.rating} | ${recipe.reviewCount} Reviews",
+        style: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
         ),
         ),
       ],
