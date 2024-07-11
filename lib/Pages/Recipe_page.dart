@@ -11,6 +11,7 @@ class RecipePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.white60,
@@ -28,7 +29,8 @@ Widget _buildUI(BuildContext context) {
           children: [
             _RecipeImage(
               context,
-            )
+            ),
+            _RecipeDetails(context),
           ],
         );
       }
@@ -39,11 +41,32 @@ Widget _RecipeImage(BuildContext context,) {
     width: MediaQuery.sizeOf(context).width,
     decoration: BoxDecoration(
       image:DecorationImage(
+        fit: BoxFit.cover,
        image: NetworkImage(
         recipe.image),  
       )
      
       ),
+  );
+}
+
+Widget _RecipeDetails (BuildContext context) {
+  return Container(
+    color: Colors.white,
+    width: MediaQuery.sizeOf(context).width,
+    child: Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("${recipe.cuisine}, ${recipe.difficulty}",
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w300,
+        ),
+        ),
+      ],
+    )
   );
 }
     
