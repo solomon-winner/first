@@ -16,26 +16,12 @@ class DataService {
     var response = await _httpService.get(path);
 
     if (response?.statusCode == 200 && response?.data != null) {
-      try {
+     
         List data = response!.data["recipes"];
-        if (data == null || data.isEmpty) {
-          print("Response data is null or empty");
-          return null;
-        }
 
-        print("Response data: $data");
-
-        List<Recipe> recipes = data.map((e) {
-          print("Parsing recipe: $e");
-          return Recipe.fromJson(e);
-        }).toList();
-
-        print("Parsed recipes 2: $recipes");
+        List<Recipe> recipes = data.map((e) => Recipe.fromJson(e)).toList();
         return recipes;
-      } catch (e) {
-        print("Error parsing recipes: $e");
-        return null;
-      }
+      
     } else {
       print("Error in response: ${response?.statusCode} - ${response?.data}");
       return null;
