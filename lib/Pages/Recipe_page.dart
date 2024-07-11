@@ -1,4 +1,5 @@
 import 'package:first/models/Recipe.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -32,6 +33,7 @@ Widget _buildUI(BuildContext context) {
             ),
             _RecipeDetails(context),
             _RecipeIngredients(context),
+            _RecipeInstructions(context),
           ],
         );
       }
@@ -101,7 +103,29 @@ Widget _RecipeDetails (BuildContext context) {
 
   Widget _RecipeIngredients(BuildContext context) {
     return Container(
-      child: Column(),
+      color: Colors.white,
+      width: MediaQuery.sizeOf(context).width,
+      padding: const EdgeInsets.symmetric(
+        vertical: 15.0,
+        horizontal: 20.0,
+      ),
+      child: Column(
+        children: recipe.ingredients.map((i) {
+          return Row(
+            children: [
+              const Icon( Icons.check_box,),
+              Text("  $i")
+            ],
+          );
+        }
+        ).toList(),
+      ),
     );
   }  
+
+  Widget _RecipeInstructions (BuildContext context) {
+    return Container(
+      
+    );
+  }
 }
